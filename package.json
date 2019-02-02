@@ -1,16 +1,79 @@
 {
-  "name": "xxxxxx",
-  "version": "1.0.0",
-  "main": "index.js",
+  "name": "renthouse-data-center",
+  "version": "0.0.0",
+  "description": "description",
+  "author": "Zhouyu",
+  "license": "MIT",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc -p tsconfig.build.json",
+    "start": "export NODE_ENV=dev && ts-node src/main.ts",
+    "prebuild": "rimraf dist",
+    "test": "jest",
+    "test:cov": "jest --coverage"
   },
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "dependencies": {
+    "@nestjs/common": "^5.4.0",
+    "@nestjs/core": "^5.4.0",
+    "@nestjs/jwt": "^0.2.1",
+    "@nestjs/microservices": "^5.4.0",
+    "@nestjs/passport": "^5.1.0",
+    "@nestjs/swagger": "^2.5.1",
+    "@nestjs/typeorm": "^5.2.2",
+    "amqp-connection-manager": "^2.3.0",
+    "amqplib": "^0.5.3",
+    "class-transformer": "^0.2.0",
+    "class-validator": "^0.9.1",
+    "cron": "^1.6.0",
+    "dayjs": "^1.8.0",
+    "dotenv": "^6.2.0",
+    "jsonwebtoken": "^8.4.0",
+    "lodash": "^4.17.11",
+    "mongodb": "^3.1.12",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "passport-localapikey": "0.0.3",
+    "reflect-metadata": "^0.1.12",
+    "rimraf": "^2.6.2",
+    "rxjs": "^6.2.2",
+    "typeorm": "^0.2.11",
+    "typescript": "^3.0.1",
+    "uuid": "^3.3.2",
     "axios": "^0.18.0",
-    "cheerio": "^1.0.0-rc.2",
-    "lodash": "^4.17.11"
+    "cheerio": "^1.0.0-rc.2"
+  },
+  "devDependencies": {
+    "@nestjs/testing": "^5.1.0",
+    "@types/cheerio": "^0.22.10",
+    "@types/cron": "^1.3.0",
+    "@types/dotenv": "^6.1.0",
+    "@types/express": "^4.16.0",
+    "@types/jest": "^23.3.1",
+    "@types/jsonwebtoken": "^8.3.0",
+    "@types/lodash": "^4.14.119",
+    "@types/node": "^10.7.1",
+    "@types/qs": "^6.5.1",
+    "@types/supertest": "^2.0.5",
+    "@types/uuid": "^3.4.4",
+    "jest": "^23.5.0",
+    "supertest": "^3.1.0",
+    "ts-jest": "^23.1.3",
+    "ts-loader": "^4.4.2",
+    "ts-node": "^7.0.1",
+    "tsconfig-paths": "^3.5.0",
+    "tslint": "5.11.0"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "test",
+    "testRegex": ".spec.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node"
   }
 }

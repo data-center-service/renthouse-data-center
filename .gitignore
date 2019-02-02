@@ -397,3 +397,4 @@ config/*.json
 coverage
 .nyc_output
 src/script/hunan
+config/*.env
